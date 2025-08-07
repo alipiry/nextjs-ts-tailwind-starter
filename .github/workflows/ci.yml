@@ -1,70 +1,36 @@
-name: ESLint, TS & Prettier Check
+name: Code Quality Check
+
 on:
   push:
-    branches:
-      - main
-      - develop
+    branches: [main, develop]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  lint:
-    name: ESLint
+  code-quality:
+    name: Code Quality
     runs-on: ubuntu-latest
-    steps:
-      - name: Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.12.1
 
-      - name: Checkout repo
+    steps:
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: "yarn"
 
-      - name: Download deps
-        uses: bahmutov/npm-install@v1
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
 
-      - name: Lint
+      - name: Run ESLint
         run: yarn lint:strict
 
-  typecheck:
-    name: TypeScript
-    runs-on: ubuntu-latest
-    steps:
-      - name: Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.12.1
-
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Setup node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Download deps
-        uses: bahmutov/npm-install@v1
-
-      - name: Type check
+      - name: Run TypeScript check
         run: yarn typecheck
 
-  prettier:
-    name: Prettier
-    runs-on: ubuntu-latest
-    steps:
-      - name: Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.12.1
-
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Setup node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Download deps
-        uses: bahmutov/npm-install@v1
-
-      - name: Type check
+      - name: Check Prettier formatting
         run: yarn format:check
