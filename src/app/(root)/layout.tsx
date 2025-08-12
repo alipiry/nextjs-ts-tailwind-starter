@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { Metadata } from "next";
 import Header from "@/ui/header/header";
 import Footer from "@/ui/footer/footer";
 import {
@@ -11,7 +12,7 @@ import { cn, montserratFont } from "@/utils";
 import { APP_ENV, SITE_URL } from "@/config";
 import "@/app/globals.css";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: {
     template: `%s | ${metaTitle}`,
     default: metaTitle,
