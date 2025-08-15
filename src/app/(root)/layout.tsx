@@ -8,7 +8,7 @@ import {
   metaDesc,
   metaTitle,
 } from "@/consts";
-import { cn, montserratFont } from "@/utils";
+import { cn, montserratFont } from "@/lib/utils";
 import { APP_ENV, SITE_URL } from "@/config";
 import "@/app/globals.css";
 
