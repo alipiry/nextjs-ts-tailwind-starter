@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Container from "@/components/container";
 import { useImageLoading } from "@/hooks";
-import { cn } from "@/utils";
+import { cn } from "@/lib/utils";
 import { fadeUpAnimationVariants } from "@/consts";
 
 export default function HeaderContentContainer() {
