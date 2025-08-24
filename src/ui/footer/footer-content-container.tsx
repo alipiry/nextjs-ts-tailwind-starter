@@ -17,7 +17,7 @@ export default function FooterContentContainer() {
           }}
           variants={fadeUpAnimationVariants}
         >
-          {`© ${currentYear} Roqqet Media. All rights reserved.`}
+          © {currentYear} NextJS Starter
         </motion.div>
       </div>
     </Container>

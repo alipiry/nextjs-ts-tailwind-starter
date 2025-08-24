@@ -35,4 +35,4 @@ yarn create next-app --example https://github.com/alipiry/nextjs-ts-tailwind-sta
 Deploy the template using
 [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-template):
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/roqqetmedia/nextjs-ts-tailwind-starter)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/alipiry/nextjs-ts-tailwind-starter)

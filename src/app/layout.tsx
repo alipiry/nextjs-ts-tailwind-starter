@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     default: metaTitle,
   },
   description: metaDesc,
-  keywords: ["Roqqet Media", "Nextjs", "Starter", "App Router"],
+  keywords: ["Nextjs", "Starter", "App Router"],
   formatDetection: {
     telephone: false,
   },
@@ -33,7 +33,6 @@ export const metadata: Metadata = {
     ...defaultTwitter,
     title: metaTitle,
     description: metaDesc,
-    site: "@roqqetmedia",
   },
   robots: {
     index: APP_ENV === "production",
@@ -54,7 +53,7 @@ export const metadata: Metadata = {
 export const viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#8b6eff",
+  themeColor: "#ffffff",
 };
 
 interface RootLayoutProps {
