@@ -25,9 +25,9 @@ with [npm](https://docs.npmjs.com/cli/init) or
 [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the template:
 
 ```bash
-npx create-next-app --example https://github.com/roqqetmedia/nextjs-ts-tailwind-starter nextjs-ts-tailwind-starter
+npx create-next-app --example https://github.com/alipiry/nextjs-ts-tailwind-starter nextjs-ts-tailwind-starter
 # or
-yarn create next-app --example https://github.com/roqqetmedia/nextjs-ts-tailwind-starter nextjs-ts-tailwind-starter
+yarn create next-app --example https://github.com/alipiry/nextjs-ts-tailwind-starter nextjs-ts-tailwind-starter
 ```
 
 ## Deploy your own
