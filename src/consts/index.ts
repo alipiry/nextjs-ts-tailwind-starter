@@ -1,5 +1,6 @@
-export const metaTitle = "Roqqet Media";
-export const metaDesc = "NextJS starter template";
+export const metaTitle = "NextJS Starter";
+export const metaDesc =
+  "A starter template for Next.js projects with Tailwind CSS and Framer Motion.";
 
 export const ogSize = {
   width: 1600,
@@ -8,19 +9,19 @@ export const ogSize = {
 
 export const ogImageProps = {
   ...ogSize,
-  alt: "Roqqet Media",
+  alt: "NextJS Starter",
   contentType: "image/png",
 };
 
 export const defaultOpenGraph = {
-  siteName: "Roqqet Media",
+  siteName: "NextJS Starter",
   images: [
     {
       url: "/images/og.png",
       ...ogImageProps,
     },
   ],
-  locale: "en_GB",
+  locale: "en_US",
   type: "website",
 };
 
