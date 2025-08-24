@@ -1,7 +1,7 @@
 # Next.js + TailwindCSS + TypeScript Starter Template
 
 <div align="center">
-  <h2>Made with ❤ by <a href="https://github.com/roqqetmedia">Roqqet Media</a></h2>
+  <h2>Made with ❤ by <a href="https://github.com/alipiry">Ali Piry</a></h2>
 </div>
 
 ## Features
