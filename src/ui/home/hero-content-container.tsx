@@ -8,7 +8,7 @@ export default function HeroContentContainer() {
   return (
     <Container>
       <motion.div
-        className="space-y-8 text-center"
+        className="text-center"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
