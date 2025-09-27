@@ -1,6 +1,23 @@
 {
   "name": "nextjs-ts-tailwind-starter",
   "version": "0.0.1",
+  "description": "A Next.js starter template with TypeScript and Tailwind CSS",
+  "author": "Ali Piry",
+  "license": "MIT",
+  "keywords": [
+    "nextjs",
+    "typescript",
+    "tailwindcss",
+    "starter"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alipiry/nextjs-ts-tailwind-starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alipiry/nextjs-ts-tailwind-starter/issues"
+  },
+  "homepage": "https://github.com/alipiry/nextjs-ts-tailwind-starter#readme",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
