@@ -6,7 +6,7 @@
 
 ## Features
 
-- Next.js 15
+- Next.js 16
 - React.js 19
 - TypeScript 5
 - TailwindCSS 4
@@ -21,13 +21,39 @@
 
 Execute
 [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
-with [npm](https://docs.npmjs.com/cli/init) or
-[yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the template:
+with [pnpm](https://pnpm.io/) to bootstrap the template:
 
 ```bash
-npx create-next-app --example https://github.com/alipiry/nextjs-ts-tailwind-starter nextjs-ts-tailwind-starter
-# or
-yarn create next-app --example https://github.com/alipiry/nextjs-ts-tailwind-starter nextjs-ts-tailwind-starter
+pnpm create next-app --example https://github.com/alipiry/nextjs-ts-tailwind-starter nextjs-ts-tailwind-starter
+```
+
+Or clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/alipiry/nextjs-ts-tailwind-starter.git
+cd nextjs-ts-tailwind-starter
+pnpm install
+cp .env.local.example .env.local
+```
+
+## Getting Started
+
+Run the development server:
+
+```bash
+pnpm dev
+```
+
+Build for production:
+
+```bash
+pnpm build
+```
+
+Start the production server:
+
+```bash
+pnpm start
 ```
 
 ## Deploy your own

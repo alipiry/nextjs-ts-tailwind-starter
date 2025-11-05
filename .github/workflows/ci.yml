@@ -17,20 +17,25 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "yarn"
+          cache: "pnpm"
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Run ESLint
-        run: yarn lint:strict
+        run: pnpm lint:strict
 
       - name: Run TypeScript check
-        run: yarn typecheck
+        run: pnpm typecheck
 
       - name: Check Prettier formatting
-        run: yarn format:check
+        run: pnpm format:check
