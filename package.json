@@ -29,6 +29,11 @@
     "typecheck": "tsc --noEmit --incremental false",
     "prepare": "husky"
   },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=10.0.0"
+  },
+  "packageManager": "pnpm@10.25.0",
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.18",
     "framer-motion": "^12.23.26",
