@@ -29,30 +29,35 @@
     "typecheck": "tsc --noEmit --incremental false",
     "prepare": "husky"
   },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=10.0.0"
+  },
+  "packageManager": "pnpm@10.25.0",
   "dependencies": {
-    "@tailwindcss/postcss": "^4.1.16",
-    "framer-motion": "^12.23.24",
-    "next": "^16.0.1",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "sharp": "^0.34.4"
+    "@tailwindcss/postcss": "^4.1.18",
+    "framer-motion": "^12.23.26",
+    "next": "^16.0.10",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.19",
-    "@types/node": "^24.10.0",
-    "@types/react": "^19.2.2",
-    "@types/react-dom": "^19.2.2",
+    "@types/node": "^25.0.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
     "clsx": "^2.1.1",
-    "eslint": "^9.39.1",
-    "eslint-config-next": "^16.0.1",
+    "eslint": "^9.39.2",
+    "eslint-config-next": "^16.0.10",
     "eslint-config-prettier": "^10.1.8",
     "husky": "^9.1.7",
-    "lint-staged": "^16.2.6",
+    "lint-staged": "^16.2.7",
     "postcss": "^8.5.6",
-    "prettier": "^3.6.2",
-    "prettier-plugin-tailwindcss": "^0.7.1",
-    "tailwind-merge": "^3.3.1",
-    "tailwindcss": "^4.1.16",
+    "prettier": "^3.7.4",
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "tailwind-merge": "^3.4.0",
+    "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3"
   }
 }
