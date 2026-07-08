@@ -1,39 +1,33 @@
 name: Code Quality Check
-
 on:
   push:
     branches: [main, develop]
-
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
-
 jobs:
   code-quality:
     name: Code Quality
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
-
+        with:
+          version: 11.10.0
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: "pnpm"
-
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-
       - name: Run ESLint
         run: pnpm lint:strict
-
       - name: Run TypeScript check
         run: pnpm typecheck
-
       - name: Check Prettier formatting
         run: pnpm format:check
+      - name: Build
+        run: pnpm build
