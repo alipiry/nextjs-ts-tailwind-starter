@@ -27,6 +27,7 @@
     "format": "prettier -w .",
     "format:check": "prettier -c .",
     "typecheck": "tsc --noEmit --incremental false",
+    "commitlint": "commitlint --edit",
     "prepare": "husky"
   },
   "engines": {
@@ -43,6 +44,8 @@
     "sharp": "^0.34.5"
   },
   "devDependencies": {
+    "@commitlint/cli": "^21.2.0",
+    "@commitlint/config-conventional": "^21.2.0",
     "@tailwindcss/typography": "^0.5.20",
     "@types/node": "^25.9.5",
     "@types/react": "^19.2.17",
