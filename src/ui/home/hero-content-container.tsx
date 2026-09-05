@@ -14,11 +14,11 @@ export default function HeroContentContainer() {
           </Badge>
         </div>
 
-        <h1 className="max-w-3xl text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+        <h1 className="max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
           Build high-performance web apps with modern precision.
         </h1>
 
-        <p className="text-muted-foreground max-w-2xl text-base sm:text-lg md:text-xl">
+        <p className="text-muted-foreground max-w-xl text-base sm:text-lg">
           A production-ready foundation powered by React 19, Turbopack,
           shadcn/ui base-nova components, and strict TypeScript verification.
         </p>
