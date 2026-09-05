@@ -1,6 +1,6 @@
 export const metaTitle = "NextJS Starter";
 export const metaDesc =
-  "A starter template for Next.js projects with Tailwind CSS and Framer Motion.";
+  "A starter template for Next.js projects with Tailwind CSS and shadcn/ui.";
 
 export const ogSize = {
   width: 1600,

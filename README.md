@@ -10,7 +10,7 @@
 - React.js 19
 - TypeScript 5
 - TailwindCSS 4
-- Framer Motion
+- shadcn/ui
 - Absolute Import and Path Alias — Import components using `@/` prefix
 - ESLint
 - Prettier
