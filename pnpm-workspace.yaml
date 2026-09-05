@@ -6,4 +6,3 @@ ignoredBuiltDependencies:
   - unrs-resolver
 minimumReleaseAgeExclude:
   - "@types/node@25.9.5 || 26.4.1"
-  - lint-staged@17.5.0
