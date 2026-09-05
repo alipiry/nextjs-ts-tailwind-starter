@@ -2,6 +2,7 @@ import Link from "next/link";
 import Container from "@/components/container";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
+import { ModeToggle } from "@/components/mode-toggle";
 import { ExternalLink } from "lucide-react";
 
 export default function HeaderContentContainer() {
@@ -19,7 +20,7 @@ export default function HeaderContentContainer() {
           </Badge>
         </div>
 
-        <nav className="flex items-center gap-4 sm:gap-6">
+        <nav className="flex items-center gap-3 sm:gap-4">
           <Link
             href="#features"
             className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors"
@@ -44,6 +45,7 @@ export default function HeaderContentContainer() {
             <span className="hidden sm:inline">GitHub</span>
             <ExternalLink className="size-3.5" />
           </a>
+          <ModeToggle />
         </nav>
       </div>
     </Container>

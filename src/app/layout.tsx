@@ -14,6 +14,8 @@ import { APP_ENV, SITE_URL } from "@/config";
 import "@/app/globals.css";
 import { Inter } from "next/font/google";
 
+import { ThemeProvider } from "@/components/theme-provider";
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -78,16 +80,27 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
   return (
-    <html lang="en" className={cn("font-sans", inter.variable)}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={cn("font-sans", inter.variable)}
+    >
       <body
         className={cn(
           "font-sans antialiased",
           "flex min-h-screen flex-col justify-between",
         )}
       >
-        <Header />
-        {children}
-        <Footer />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
