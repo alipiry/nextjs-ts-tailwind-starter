@@ -14,13 +14,16 @@
 - **Next.js 16 (App Router)**: Fast, modern routing with React Server Components by default and Turbopack.
 - **React 19**: Built on the latest React foundation with full server-side streaming support.
 - **Tailwind CSS v4**: CSS-first configuration with `@theme` variables, OKLCH colors, and `@tailwindcss/typography`.
-- **shadcn/ui & Base UI**: Accessible, headless UI primitives (`base-nova` style) with `Button`, `Card`, `Badge`, and `Separator`.
-- **TypeScript 5**: Strict compiler checks with path aliases (`@/` imports).
+- **shadcn/ui & Base UI**: Accessible, headless UI primitives (`base-nova` style) with `Button`, `Card`, `Badge`, `Separator`, and `DropdownMenu`.
+- **Dark Mode**: System-aware theme toggle with `next-themes` and smooth transitions.
+- **TypeScript 5**: Strict compiler checks (`ES2022`, `noUncheckedIndexedAccess`) with path aliases (`@/` imports).
+- **Automated Testing**: Vitest test runner with React Testing Library and jsdom.
+- **Resilient Link Component**: Built-in insulation against DOM-mutating browser extensions and auto-managed external links.
 - **Lucide Icons**: Crisp, customizable SVG icons via `lucide-react`.
 - **Code Quality & Git Hooks**:
   - **ESLint 9**: Modern flat-config linting with Next.js rules.
   - **Prettier**: Automated formatting with `prettier-plugin-tailwindcss`.
-  - **Husky & lint-staged**: Pre-commit linting, typechecking, and formatting.
+  - **Husky & lint-staged**: Fast pre-commit linting, typechecking, and formatting on staged files.
   - **Commitlint**: Enforced Conventional Commits (`@commitlint/config-conventional`).
 - **SEO & Social Sharing**:
   - Dynamic OpenGraph and Twitter card metadata configuration.
@@ -71,6 +74,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 | `pnpm dev`          | `next dev`                    | Starts local development server with Turbopack |
 | `pnpm build`        | `next build`                  | Creates an optimized production build          |
 | `pnpm start`        | `next start`                  | Runs the production server                     |
+| `pnpm test`         | `vitest run`                  | Runs automated unit test suite                 |
+| `pnpm test:watch`   | `vitest`                      | Starts test runner in interactive watch mode   |
 | `pnpm typecheck`    | `tsc --noEmit`                | Runs strict TypeScript typechecking            |
 | `pnpm lint`         | `eslint src`                  | Checks code against ESLint rules               |
 | `pnpm lint:strict`  | `eslint --max-warnings=0 src` | Fails on any ESLint warnings or errors         |
@@ -83,22 +88,26 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ```
 ├── .github/              # CI workflows (GitHub Actions)
-├── .husky/               # Git hooks
-├── public/               # Static assets
+├── .husky/               # Git hooks (pre-commit, commit-msg)
+├── public/               # Static assets (images, icons)
+├── vitest.config.mts     # Vitest configuration
+├── vitest.setup.ts       # Test environment setup
 └── src/
     ├── app/              # Next.js App Router (pages, layout, metadata)
     │   ├── (root)/       # Main application routes
     │   ├── globals.css   # Tailwind CSS v4 @theme styles & color tokens
-    │   ├── layout.tsx    # Root layout with Inter font & metadata
+    │   ├── layout.tsx    # Root layout with Inter font, theme provider & metadata
     │   ├── robots.ts     # Dynamic robots.txt
     │   └── sitemap.ts    # Dynamic sitemap.xml
     ├── components/       # Reusable components
-    │   ├── ui/           # shadcn/ui components (button, card, badge, separator)
-    │   └── container.tsx # Responsive container wrapper
+    │   ├── ui/           # shadcn/ui primitives (button, card, badge, link, etc.)
+    │   ├── container.tsx # Bounded responsive container (max-w-7xl)
+    │   ├── mode-toggle.tsx   # Theme switcher dropdown
+    │   └── theme-provider.tsx # next-themes provider wrapper
     ├── config/           # App configuration and environment variables
     ├── consts/           # App constants, metadata defaults
     ├── lib/              # Utility functions (cn helper)
-    └── ui/               # Section-level UI components
+    └── ui/               # Section-level layout components
         ├── header/       # Header navbar and brand container
         ├── home/         # Hero section, features grid
         └── footer/       # Footer container and links
