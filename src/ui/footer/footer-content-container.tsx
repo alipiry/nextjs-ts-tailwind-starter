@@ -15,6 +15,7 @@ export default function FooterContentContainer() {
             href="https://github.com/alipiry/nextjs-ts-tailwind-starter"
             target="_blank"
             rel="noopener noreferrer"
+            suppressHydrationWarning
             className="hover:text-foreground transition-colors"
           >
             GitHub
@@ -23,6 +24,7 @@ export default function FooterContentContainer() {
             href="https://github.com/alipiry/nextjs-ts-tailwind-starter#readme"
             target="_blank"
             rel="noopener noreferrer"
+            suppressHydrationWarning
             className="hover:text-foreground transition-colors"
           >
             Documentation
@@ -31,6 +33,7 @@ export default function FooterContentContainer() {
             href="https://github.com/alipiry/nextjs-ts-tailwind-starter/blob/main/LICENSE"
             target="_blank"
             rel="noopener noreferrer"
+            suppressHydrationWarning
             className="hover:text-foreground transition-colors"
           >
             License

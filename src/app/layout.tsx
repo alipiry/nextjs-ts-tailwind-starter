@@ -86,6 +86,7 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
       className={cn("font-sans", inter.variable)}
     >
       <body
+        suppressHydrationWarning
         className={cn(
           "font-sans antialiased",
           "flex min-h-screen flex-col justify-between",
