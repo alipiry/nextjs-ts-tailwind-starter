@@ -1,6 +1,19 @@
 export const metaTitle = "NextJS Starter";
 export const metaDesc =
-  "A starter template for Next.js projects with Tailwind CSS and shadcn/ui.";
+  "A TypeScript starter for Next.js 16 that includes App Router, Tailwind CSS 4, shadcn/ui, Built-in SEO, and more.";
+
+export const metaKeywords = [
+  "Next.js 16",
+  "React 19",
+  "Tailwind CSS 4",
+  "shadcn/ui",
+  "TypeScript",
+  "App Router",
+  "Turbopack",
+  "Starter Template",
+  "Boilerplate",
+  "Base UI",
+];
 
 export const ogSize = {
   width: 1600,
@@ -9,7 +22,7 @@ export const ogSize = {
 
 export const ogImageProps = {
   ...ogSize,
-  alt: "NextJS Starter",
+  alt: "NextJS Starter - Next.js 16, Tailwind CSS 4 & shadcn/ui",
   contentType: "image/png",
 };
 

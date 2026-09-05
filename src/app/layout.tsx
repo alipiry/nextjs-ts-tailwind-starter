@@ -1,11 +1,12 @@
 import { ReactNode } from "react";
-import { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Header from "@/ui/header/header";
 import Footer from "@/ui/footer/footer";
 import {
   defaultOpenGraph,
   defaultTwitter,
   metaDesc,
+  metaKeywords,
   metaTitle,
 } from "@/consts";
 import { cn } from "@/lib/utils";
@@ -21,14 +22,20 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: {
     template: `%s | ${metaTitle}`,
-    default: metaTitle,
+    default: `${metaTitle} — Next.js 16, Tailwind CSS 4 & shadcn/ui`,
   },
   description: metaDesc,
-  keywords: ["Nextjs", "Starter", "App Router"],
+  keywords: metaKeywords,
+  authors: [{ name: "Ali Piry", url: "https://github.com/alipiry" }],
+  creator: "Ali Piry",
+  publisher: "Ali Piry",
   formatDetection: {
     telephone: false,
   },
   metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     ...defaultOpenGraph,
     title: metaTitle,
@@ -56,10 +63,13 @@ export const metadata: Metadata = {
   },
 };
 
-export const viewport = {
+export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#ffffff",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#09090b" },
+  ],
 };
 
 interface RootLayoutProps {
