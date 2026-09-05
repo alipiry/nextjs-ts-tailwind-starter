@@ -27,7 +27,6 @@ export default function HeroContentContainer() {
         <div className="flex w-full flex-col items-center justify-center gap-3 pt-2 sm:w-auto sm:flex-row sm:gap-4">
           <Link
             href="#features"
-            suppressHydrationWarning
             className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-auto")}
           >
             Explore Features
@@ -37,7 +36,6 @@ export default function HeroContentContainer() {
             href="https://github.com/alipiry/nextjs-ts-tailwind-starter#readme"
             target="_blank"
             rel="noopener noreferrer"
-            suppressHydrationWarning
             className={cn(
               buttonVariants({ variant: "outline", size: "lg" }),
               "w-full sm:w-auto",
