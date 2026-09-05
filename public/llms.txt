@@ -1,0 +1,49 @@
+# NextJS Starter
+
+> Production-ready starter template engineered with Next.js 16, React 19, Tailwind CSS v4, and shadcn/ui.
+
+NextJS Starter is an opinionated, high-performance foundation for modern web applications. It leverages React Server Components (RSC) by default for zero client JavaScript bundle overhead on marketing routes, pure CSS-first configuration via Tailwind CSS v4 `@theme`, accessible unstyled primitives from Base UI and shadcn/ui (`base-nova` style), strict TypeScript 5 verification (`ES2022`, `noUncheckedIndexedAccess`), automated Vitest test suite, and built-in Generative Engine Optimization (GEO).
+
+## Key Architecture & Features
+
+- Next.js 16: Modern App Router with Turbopack compilation and fast static prerendering.
+- React 19: Full Server Components support, server streaming, and isolated client boundaries.
+- Tailwind CSS v4: CSS theme variables, OKLCH color spaces, and tw-animate-css integration.
+- shadcn/ui & Base UI: Headless accessible UI components (Button, Card, Badge, Separator, DropdownMenu).
+- Dark Mode: System preference detection with next-themes and smooth transition isolation.
+- TypeScript 5: Modern ES2022 target with strict compiler rules including noUncheckedIndexedAccess.
+- Automated Testing: Vitest test runner with React Testing Library and jsdom.
+- Resilient Link: Centralized abstraction insulating against DOM-mutating browser extensions.
+- Code Quality: ESLint 9 flat config, Prettier, Husky git hooks, and Conventional Commits.
+- SEO & Social: OpenGraph, Twitter cards, dynamic sitemap.xml, robots.txt, and Schema.org structured data.
+
+## Docs
+
+- [README](https://github.com/alipiry/nextjs-ts-tailwind-starter#readme): Comprehensive guide, scripts table, and directory tree.
+- [GitHub Repository](https://github.com/alipiry/nextjs-ts-tailwind-starter): Source code, issues, releases, and discussions.
+- [License](https://github.com/alipiry/nextjs-ts-tailwind-starter/blob/main/LICENSE): MIT open-source license.
+
+## Quick Start
+
+```bash
+git clone https://github.com/alipiry/nextjs-ts-tailwind-starter.git
+cd nextjs-ts-tailwind-starter
+pnpm install
+cp .env.example .env.local
+pnpm dev
+pnpm test
+pnpm build
+```
+
+## Available Scripts
+
+- `pnpm dev`: Starts local development server with Turbopack.
+- `pnpm build`: Creates an optimized production build.
+- `pnpm start`: Starts production server.
+- `pnpm test`: Runs Vitest automated unit test suite.
+- `pnpm test:watch`: Runs Vitest in interactive watch mode.
+- `pnpm typecheck`: Runs strict TypeScript typechecking.
+- `pnpm lint`: Checks code against ESLint rules.
+- `pnpm lint:strict`: Fails on any ESLint warnings or errors.
+- `pnpm format`: Formats all files with Prettier.
+- `pnpm format:check`: Verifies code formatting with Prettier.
