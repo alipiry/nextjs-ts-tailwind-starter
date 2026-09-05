@@ -15,6 +15,7 @@ import "@/app/globals.css";
 import { Inter } from "next/font/google";
 
 import { ThemeProvider } from "@/components/theme-provider";
+import { JsonLd } from "@/components/json-ld";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -92,6 +93,7 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
           "flex min-h-screen flex-col justify-between",
         )}
       >
+        <JsonLd />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

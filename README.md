@@ -1,7 +1,7 @@
 # Next.js + Tailwind CSS 4 + TypeScript Starter
 
 <div align="center">
-  <h3>Modern, production-ready starter template engineered with Next.js 16, React 19, Tailwind CSS v4, and shadcn/ui.</h3>
+  <h3>Modern, production-ready starter template engineered with Next.js 16, React 19, Tailwind CSS v4, shadcn/ui, and Generative Engine Optimization (GEO).</h3>
   <p>
     Made with &hearts; by <a href="https://github.com/alipiry">Ali Piry</a>
   </p>
@@ -19,6 +19,11 @@
 - **TypeScript 5**: Strict compiler checks (`ES2022`, `noUncheckedIndexedAccess`) with path aliases (`@/` imports).
 - **Automated Testing**: Vitest test runner with React Testing Library and jsdom.
 - **Resilient Link Component**: Built-in insulation against DOM-mutating browser extensions and auto-managed external links.
+- **Generative Engine Optimization (GEO)**:
+  - Standard `llms.txt` discovery manifest for AI search engines (ChatGPT, Claude, Perplexity).
+  - Schema.org JSON-LD structured data (`SoftwareApplication`, `WebSite`, `FAQPage`, `Person` author graph).
+  - Explicit AI search crawler permissions in `robots.ts` (`GPTBot`, `ClaudeBot`, `PerplexityBot`, etc.).
+  - Fact-dense, high-citability FAQ section for AI quotation and search snippet extraction.
 - **Lucide Icons**: Crisp, customizable SVG icons via `lucide-react`.
 - **Code Quality & Git Hooks**:
   - **ESLint 9**: Modern flat-config linting with Next.js rules.
@@ -89,19 +94,21 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ```
 ├── .github/              # CI workflows (GitHub Actions)
 ├── .husky/               # Git hooks (pre-commit, commit-msg)
-├── public/               # Static assets (images, icons)
+├── public/               # Static assets (images, icons, llms.txt manifest)
+│   └── llms.txt          # Standard AI discovery manifest
 ├── vitest.config.mts     # Vitest configuration
 ├── vitest.setup.ts       # Test environment setup
 └── src/
     ├── app/              # Next.js App Router (pages, layout, metadata)
     │   ├── (root)/       # Main application routes
     │   ├── globals.css   # Tailwind CSS v4 @theme styles & color tokens
-    │   ├── layout.tsx    # Root layout with Inter font, theme provider & metadata
-    │   ├── robots.ts     # Dynamic robots.txt
+    │   ├── layout.tsx    # Root layout with Inter font, theme provider & JSON-LD schema
+    │   ├── robots.ts     # Dynamic robots.txt with AI search bot permissions
     │   └── sitemap.ts    # Dynamic sitemap.xml
     ├── components/       # Reusable components
     │   ├── ui/           # shadcn/ui primitives (button, card, badge, link, etc.)
     │   ├── container.tsx # Bounded responsive container (max-w-7xl)
+    │   ├── json-ld.tsx   # Schema.org JSON-LD structured data graph
     │   ├── mode-toggle.tsx   # Theme switcher dropdown
     │   └── theme-provider.tsx # next-themes provider wrapper
     ├── config/           # App configuration and environment variables
@@ -109,7 +116,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
     ├── lib/              # Utility functions (cn helper)
     └── ui/               # Section-level layout components
         ├── header/       # Header navbar and brand container
-        ├── home/         # Hero section, features grid
+        ├── home/         # Hero section, features grid, FAQ section
         └── footer/       # Footer container and links
 ```
 
