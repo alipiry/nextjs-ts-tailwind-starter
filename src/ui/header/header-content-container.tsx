@@ -28,6 +28,12 @@ export default function HeaderContentContainer() {
             Features
           </Link>
           <Link
+            href="#faq"
+            className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors"
+          >
+            FAQ
+          </Link>
+          <Link
             href="https://github.com/alipiry/nextjs-ts-tailwind-starter#readme"
             className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors"
           >
