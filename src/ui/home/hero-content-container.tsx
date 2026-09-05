@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/components/ui/link";
 import Container from "@/components/container";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -32,10 +32,8 @@ export default function HeroContentContainer() {
             Explore Features
             <ArrowRight className="size-4" />
           </Link>
-          <a
+          <Link
             href="https://github.com/alipiry/nextjs-ts-tailwind-starter#readme"
-            target="_blank"
-            rel="noopener noreferrer"
             className={cn(
               buttonVariants({ variant: "outline", size: "lg" }),
               "w-full sm:w-auto",
@@ -43,7 +41,7 @@ export default function HeroContentContainer() {
           >
             <BookOpen className="size-4" />
             Documentation
-          </a>
+          </Link>
         </div>
       </div>
     </Container>

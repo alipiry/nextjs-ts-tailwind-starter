@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/components/ui/link";
 import Container from "@/components/container";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -29,22 +29,18 @@ export default function HeaderContentContainer() {
           </Link>
           <Link
             href="https://github.com/alipiry/nextjs-ts-tailwind-starter#readme"
-            target="_blank"
-            rel="noopener noreferrer"
             className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors"
           >
             Docs
           </Link>
-          <a
+          <Link
             href="https://github.com/alipiry/nextjs-ts-tailwind-starter"
-            target="_blank"
-            rel="noopener noreferrer"
             aria-label="GitHub repository"
             className={buttonVariants({ variant: "outline", size: "sm" })}
           >
             <span className="hidden sm:inline">GitHub</span>
             <ExternalLink className="size-3.5" />
-          </a>
+          </Link>
           <ModeToggle />
         </nav>
       </div>
