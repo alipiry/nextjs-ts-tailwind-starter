@@ -38,9 +38,10 @@ export default function HeaderContentContainer() {
             href="https://github.com/alipiry/nextjs-ts-tailwind-starter"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="GitHub repository"
             className={buttonVariants({ variant: "outline", size: "sm" })}
           >
-            GitHub
+            <span className="hidden sm:inline">GitHub</span>
             <ExternalLink className="size-3.5" />
           </a>
         </nav>

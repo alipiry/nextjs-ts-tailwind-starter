@@ -3,11 +3,12 @@ import Container from "@/components/container";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { ArrowRight, BookOpen } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export default function HeroContentContainer() {
   return (
     <Container>
-      <div className="flex flex-col items-center justify-center gap-6 py-20 text-center md:py-28">
+      <div className="flex flex-col items-center justify-center gap-6 py-16 text-center sm:py-20 md:py-28">
         <div className="flex items-center gap-2">
           <Badge variant="secondary" className="px-3 py-1 text-xs font-medium">
             Next.js 16 + Tailwind CSS 4 + shadcn/ui
@@ -23,8 +24,11 @@ export default function HeroContentContainer() {
           shadcn/ui base-nova components, and strict TypeScript verification.
         </p>
 
-        <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
-          <Link href="#features" className={buttonVariants({ size: "lg" })}>
+        <div className="flex w-full flex-col items-center justify-center gap-3 pt-2 sm:w-auto sm:flex-row sm:gap-4">
+          <Link
+            href="#features"
+            className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-auto")}
+          >
             Explore Features
             <ArrowRight className="size-4" />
           </Link>
@@ -32,7 +36,10 @@ export default function HeroContentContainer() {
             href="https://github.com/alipiry/nextjs-ts-tailwind-starter#readme"
             target="_blank"
             rel="noopener noreferrer"
-            className={buttonVariants({ variant: "outline", size: "lg" })}
+            className={cn(
+              buttonVariants({ variant: "outline", size: "lg" }),
+              "w-full sm:w-auto",
+            )}
           >
             <BookOpen className="size-4" />
             Documentation

@@ -6,11 +6,11 @@ export default function FooterContentContainer() {
   return (
     <Container>
       <div className="text-muted-foreground flex flex-col items-center justify-between gap-4 py-8 text-sm md:flex-row">
-        <p>
+        <p className="text-center md:text-left">
           &copy; {currentYear} NextJS Starter. Built with Next.js, Tailwind CSS
           &amp; shadcn/ui.
         </p>
-        <div className="flex items-center gap-6">
+        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
           <Link
             href="https://github.com/alipiry/nextjs-ts-tailwind-starter"
             target="_blank"
