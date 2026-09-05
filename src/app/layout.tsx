@@ -8,9 +8,15 @@ import {
   metaDesc,
   metaTitle,
 } from "@/consts";
-import { cn, montserratFont } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import { APP_ENV, SITE_URL } from "@/config";
 import "@/app/globals.css";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -62,10 +68,9 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
   return (
-    <html lang="en">
+    <html lang="en" className={cn("font-sans", inter.variable)}>
       <body
         className={cn(
-          montserratFont.variable,
           "font-sans antialiased",
           "flex h-screen flex-col justify-between",
         )}
