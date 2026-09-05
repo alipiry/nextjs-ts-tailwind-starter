@@ -22,7 +22,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint src",
     "lint:strict": "eslint --max-warnings=0 src",
     "format": "prettier -w .",
     "format:check": "prettier -c .",
