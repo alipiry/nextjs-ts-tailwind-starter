@@ -1,7 +1,7 @@
 {
   "name": "nextjs-ts-tailwind-starter",
   "version": "0.0.1",
-  "description": "A Next.js starter template with TypeScript and Tailwind CSS",
+  "description": "A TypeScript starter for Next.js 16 that includes App Router, Tailwind CSS 4, shadcn/ui, and built-in SEO",
   "author": "Ali Piry",
   "license": "MIT",
   "keywords": [
