@@ -72,7 +72,7 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
       <body
         className={cn(
           "font-sans antialiased",
-          "flex h-screen flex-col justify-between",
+          "flex min-h-screen flex-col justify-between",
         )}
       >
         <Header />
