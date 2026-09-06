@@ -2,15 +2,9 @@ import { ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
 import Header from "@/ui/header/header";
 import Footer from "@/ui/footer/footer";
-import {
-  defaultOpenGraph,
-  defaultTwitter,
-  metaDesc,
-  metaKeywords,
-  metaTitle,
-} from "@/consts";
 import { cn } from "@/lib/utils";
 import { APP_ENV, SITE_URL } from "@/config";
+import { buildSiteMetadata, buildSiteViewport } from "@/lib/seo/metadata";
 import "@/app/globals.css";
 import { Inter } from "next/font/google";
 
@@ -22,58 +16,12 @@ const inter = Inter({
   variable: "--font-sans",
 });
 
-export const metadata: Metadata = {
-  title: {
-    template: `%s | ${metaTitle}`,
-    default: `${metaTitle} — Next.js 16, Tailwind CSS 4 & shadcn/ui`,
-  },
-  description: metaDesc,
-  keywords: metaKeywords,
-  authors: [{ name: "Ali Piry", url: "https://github.com/alipiry" }],
-  creator: "Ali Piry",
-  publisher: "Ali Piry",
-  formatDetection: {
-    telephone: false,
-  },
-  metadataBase: new URL(SITE_URL),
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    ...defaultOpenGraph,
-    title: metaTitle,
-    description: metaDesc,
-    url: SITE_URL,
-  },
-  twitter: {
-    ...defaultTwitter,
-    title: metaTitle,
-    description: metaDesc,
-  },
-  robots: {
-    index: APP_ENV === "production",
-    follow: APP_ENV === "production",
-    "max-image-preview": "large",
-    "max-video-preview": -1,
-    "max-snippet": -1,
-    googleBot: {
-      index: APP_ENV === "production",
-      follow: APP_ENV === "production",
-      "max-image-preview": "large",
-      "max-video-preview": -1,
-      "max-snippet": -1,
-    },
-  },
-};
+export const metadata: Metadata = buildSiteMetadata({
+  siteUrl: SITE_URL,
+  isProduction: APP_ENV === "production",
+});
 
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#09090b" },
-  ],
-};
+export const viewport: Viewport = buildSiteViewport();
 
 interface RootLayoutProps {
   children: ReactNode;
