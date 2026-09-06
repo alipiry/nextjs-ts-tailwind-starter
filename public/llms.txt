@@ -12,7 +12,7 @@ NextJS Starter is an opinionated, high-performance foundation for modern web app
 - shadcn/ui & Base UI: Headless accessible UI components (Button, Card, Badge, Separator, DropdownMenu).
 - Dark Mode: System preference detection with next-themes and smooth transition isolation.
 - TypeScript 5: Modern ES2022 target with strict compiler rules including noUncheckedIndexedAccess.
-- Automated Testing: Vitest test runner with React Testing Library and jsdom.
+- Automated Testing: Vitest test runner for pure unit testing of decoupled business logic, hooks, and utilities.
 - Resilient Link: Centralized abstraction insulating against DOM-mutating browser extensions.
 - Code Quality: ESLint 9 flat config, Prettier, Husky git hooks, and Conventional Commits.
 - SEO & Social: OpenGraph, Twitter cards, dynamic sitemap.xml, robots.txt, and Schema.org structured data.

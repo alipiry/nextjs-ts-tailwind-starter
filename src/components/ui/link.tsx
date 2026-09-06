@@ -1,6 +1,7 @@
 import NextLink from "next/link";
 import type { ComponentPropsWithoutRef } from "react";
 import { cn } from "@/lib/utils";
+import { resolveLinkAttributes } from "@/lib/link";
 
 export interface LinkProps extends ComponentPropsWithoutRef<typeof NextLink> {
   external?: boolean;
@@ -24,16 +25,18 @@ export function Link({
   suppressHydrationWarning = true,
   ...props
 }: LinkProps) {
-  const isExternal =
-    external ??
-    (typeof href === "string" &&
-      (href.startsWith("http://") || href.startsWith("https://")));
+  const linkAttrs = resolveLinkAttributes({
+    href,
+    external,
+    target,
+    rel,
+  });
 
   return (
     <NextLink
       href={href}
-      target={target ?? (isExternal ? "_blank" : undefined)}
-      rel={rel ?? (isExternal ? "noopener noreferrer" : undefined)}
+      target={linkAttrs.target}
+      rel={linkAttrs.rel}
       suppressHydrationWarning={suppressHydrationWarning}
       className={cn(className)}
       {...props}

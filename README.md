@@ -3,7 +3,7 @@
 <div align="center">
   <h3>Modern, production-ready starter template engineered with Next.js 16, React 19, Tailwind CSS v4, shadcn/ui, and Generative Engine Optimization (GEO).</h3>
   <p>
-    Made with &hearts; by <a href="https://github.com/alipiry">Ali Piry</a>
+    Made with ❤ by <a href="https://github.com/alipiry">Ali Piry</a>
   </p>
 </div>
 
@@ -17,7 +17,7 @@
 - **shadcn/ui & Base UI**: Accessible, headless UI primitives (`base-nova` style) with `Button`, `Card`, `Badge`, `Separator`, and `DropdownMenu`.
 - **Dark Mode**: System-aware theme toggle with `next-themes` and smooth transitions.
 - **TypeScript 5**: Strict compiler checks (`ES2022`, `noUncheckedIndexedAccess`) with path aliases (`@/` imports).
-- **Automated Testing**: Vitest test runner with React Testing Library and jsdom.
+- **Automated Testing**: Vitest test runner for pure unit testing of decoupled business logic, hooks, and utilities (no fragile UI tests).
 - **Resilient Link Component**: Built-in insulation against DOM-mutating browser extensions and auto-managed external links.
 - **Generative Engine Optimization (GEO)**:
   - Standard `llms.txt` discovery manifest for AI search engines (ChatGPT, Claude, Perplexity).
