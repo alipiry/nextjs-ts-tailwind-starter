@@ -1,5 +1,4 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { act, renderHook } from "@testing-library/react";
 import { useThemeToggle } from "./use-theme-toggle";
 
 const mockSetTheme = vi.fn();
@@ -14,6 +13,17 @@ vi.mock("next-themes", () => ({
   }),
 }));
 
+vi.mock("react", async () => {
+  const actual = await vi.importActual<typeof import("react")>("react");
+  return {
+    ...actual,
+    useSyncExternalStore: (
+      _subscribe: unknown,
+      getClientSnapshot: () => boolean,
+    ) => getClientSnapshot(),
+  };
+});
+
 describe("useThemeToggle hook", () => {
   beforeEach(() => {
     mockSetTheme.mockClear();
@@ -21,30 +31,26 @@ describe("useThemeToggle hook", () => {
   });
 
   it("initializes and mounts properly", () => {
-    const { result } = renderHook(() => useThemeToggle());
+    const result = useThemeToggle();
 
-    expect(result.current.theme).toBe("system");
-    expect(result.current.resolvedTheme).toBe("dark");
-    expect(result.current.isMounted).toBe(true);
-    expect(result.current.themes).toEqual(["light", "dark", "system"]);
+    expect(result.theme).toBe("system");
+    expect(result.resolvedTheme).toBe("dark");
+    expect(result.isMounted).toBe(true);
+    expect(result.themes).toEqual(["light", "dark", "system"]);
   });
 
   it("calls setTheme with specified theme", () => {
-    const { result } = renderHook(() => useThemeToggle());
+    const result = useThemeToggle();
 
-    act(() => {
-      result.current.setTheme("dark");
-    });
+    result.setTheme("dark");
 
     expect(mockSetTheme).toHaveBeenCalledWith("dark");
   });
 
   it("toggles to next theme correctly using transition logic", () => {
-    const { result } = renderHook(() => useThemeToggle());
+    const result = useThemeToggle();
 
-    act(() => {
-      result.current.toggleNextTheme();
-    });
+    result.toggleNextTheme();
 
     // system -> light
     expect(mockSetTheme).toHaveBeenCalledWith("light");
