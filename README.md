@@ -3,7 +3,7 @@
 <div align="center">
   <h3>Modern, production-ready starter template engineered with Next.js 16, React 19, Tailwind CSS v4, shadcn/ui, and Generative Engine Optimization (GEO).</h3>
   <p>
-    Made with &hearts; by <a href="https://github.com/alipiry">Ali Piry</a>
+    Made with ❤ by <a href="https://github.com/alipiry">Ali Piry</a>
   </p>
 </div>
 
