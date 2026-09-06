@@ -8,10 +8,9 @@ import {
 } from "@/components/ui/card";
 import { HelpCircle } from "lucide-react";
 
-export interface FaqItem {
-  question: string;
-  answer: string;
-}
+import { buildFaqPageSchema, type FaqItem } from "@/lib/seo/schema";
+
+export type { FaqItem };
 
 export const faqs: FaqItem[] = [
   {
@@ -43,18 +42,7 @@ export const faqs: FaqItem[] = [
 ];
 
 export default function FaqSection() {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
-      },
-    })),
-  };
+  const faqSchema = buildFaqPageSchema(faqs);
 
   return (
     <section id="faq" className="border-t py-16 md:py-24">
