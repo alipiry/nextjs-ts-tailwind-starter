@@ -1,6 +1,7 @@
 import {
   buildBaseSchemaGraph,
   buildJsonLdDocument,
+  serializeJsonLd,
   type SchemaEntity,
 } from "@/lib/seo/schema";
 
@@ -19,7 +20,7 @@ export function JsonLd({ customSchema }: JsonLdProps) {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: serializeJsonLd(schema) }}
     />
   );
 }

@@ -126,3 +126,11 @@ export function buildJsonLdDocument(
     "@graph": graph,
   };
 }
+
+/**
+ * Safely serializes schema objects to a JSON string for embedding inside HTML script tags.
+ * Replaces '<' with unicode '\u003c' to prevent script tag injection and XSS.
+ */
+export function serializeJsonLd(schema: unknown): string {
+  return JSON.stringify(schema).replace(/</g, "\\u003c");
+}
