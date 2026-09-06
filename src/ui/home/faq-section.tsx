@@ -31,7 +31,7 @@ export const faqs: FaqItem[] = [
   {
     question: "What testing framework is pre-configured?",
     answer:
-      "The starter comes pre-configured with Vitest 3, React Testing Library 16, jsdom, and @testing-library/jest-dom matchers, supporting native TypeScript path aliases for fast, isolated component testing via `pnpm test`.",
+      "The starter comes pre-configured with Vitest, focusing on fast, pure unit testing of decoupled business logic, custom hooks, SEO schema builders, environment helpers, and utility functions without fragile UI rendering tests.",
   },
   {
     question:
