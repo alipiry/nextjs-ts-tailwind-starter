@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from "next";
 import Header from "@/ui/header/header";
 import Footer from "@/ui/footer/footer";
 import { cn } from "@/lib/utils";
-import { APP_ENV, SITE_URL } from "@/config";
+import { IS_PRODUCTION, SITE_URL } from "@/config";
 import { buildSiteMetadata, buildSiteViewport } from "@/lib/seo/metadata";
 import "@/app/globals.css";
 import { Inter } from "next/font/google";
@@ -18,7 +18,7 @@ const inter = Inter({
 
 export const metadata: Metadata = buildSiteMetadata({
   siteUrl: SITE_URL,
-  isProduction: APP_ENV === "production",
+  isProduction: IS_PRODUCTION,
 });
 
 export const viewport: Viewport = buildSiteViewport();

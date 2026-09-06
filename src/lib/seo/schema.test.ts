@@ -5,6 +5,7 @@ import {
   buildJsonLdDocument,
   buildSoftwareAppEntity,
   buildWebSiteEntity,
+  serializeJsonLd,
 } from "./schema";
 
 describe("Schema.org generation engine", () => {
@@ -143,6 +144,26 @@ describe("Schema.org generation engine", () => {
       expect(doc["@graph"]).toHaveLength(3);
       expect(doc["@graph"]).toContainEqual(customList[0]);
       expect(doc["@graph"]).toContainEqual(customList[1]);
+    });
+  });
+
+  describe("serializeJsonLd", () => {
+    it("serializes schema document into JSON string", () => {
+      const doc = { "@context": "https://schema.org", name: "Site" };
+      expect(serializeJsonLd(doc)).toBe(
+        '{"@context":"https://schema.org","name":"Site"}',
+      );
+    });
+
+    it("escapes '<' characters to '\\u003c' to prevent script tag termination", () => {
+      const payload = {
+        description: '</script><script>alert("xss")</script>',
+      };
+      const serialized = serializeJsonLd(payload);
+
+      expect(serialized).not.toContain("</script>");
+      expect(serialized).toContain("\\u003c/script>");
+      expect(serialized).toContain("\\u003cscript>");
     });
   });
 });
